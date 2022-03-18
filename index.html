@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <style>
+            #sc-container {
+                              margin: 0 auto;
+                              float: bottom;
+                          }
+        </style>
+        <title>NJBPU Broadband Survey</title>
+     <!-- Required meta tags -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+ 
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    </head>   
+<body>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+          <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+          <script>
+              function ShowHideDiv(){
+              var connect=document.getElementById("Yes");
+              var netyes = document.getElementById("netyes");
+              netyes.style.display = Yes.checked?"block":"none";
+              var connect = document.getElementById("No");
+              var netno = document.getElementById("netno");
+              netno.style.display = No.checked?"block":"none";
+            }
+          </script>
+
+        <div class="container">
+              <div class="header">
+                <img src="resources/New_Jersey_IT_logo.svg" alt="NJIT Logo" width="500" height="100vh">
+                <!-- <img src="resources/bpu-logo.jpg" alt="NJIT logo" width="300" height="300vh"> -->
+              </div>
+    <div class="row">
+        <div class="col-lg-8">
+                <form action = "insert.php" method = "post" >
+
+                    <div class="form-group">
+                        <label for="inputAddress">Street Address</label>
+                        <input type="text" class="form-control" id="inputAddress" name="inputAddress" placeholder="1234 Main St" required="true">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputAddress2">Apt/Suite#</label>
+                            <input type="number" class="form-control" id="inputAddress2" name="inputAddress2" placeholder="Apartment, studio, or floor">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputhousetype">Housing Option</label>
+                            <select id="inputhousetype" name="inputhousetype" class="form-control" id="inputhousetype" required>
+                                <option selected>---Select Housing Type---</option>
+                                <option value="1">Single-Family Home</option>
+                                <option value="2">Multifamily Home</option>
+                                <option value="3">Townhome</option>
+                                <option value="4">Apartment</option>
+                                <option value="5">Condominiums</option>
+                                <option value="6">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">City</label>
+                            <input type="text" class="form-control" id="inputCity" name="inputCity" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputCounty">County</label>
+                            <select id="inputCounty" name="inputCounty" class="form-control" required>
+                                <option value="sel" selected>---Select County---</option>
+                                <option value="1">Atlantic County</option>
+                                <option value="2">Bergen County</option>
+                                <option value="3">Burlington County</option>
+                                <option value="4">Camden County</option>
+                                <option value="5">Cape May County</option>
+                                <option value="6">Cumberland County</option>
+                                <option value="7">Essex County</option>
+                                <option value="8">Gloucester County</option>
+                                <option value="9">Hudson County</option>
+                                <option value="10">Hunterdon County</option>
+                                <option value="11">Mercer County</option>
+                                <option value="12">Middlesex County</option>
+                                <option value="13">Manmouth County</option>
+                                <option value="14">Morris County</option>
+                                <option value="15">Ocean County</option>
+                                <option value="16">Passaic County</option>
+                                <option value="17">Salem County</option>
+                                <option value="18">Somerset County</option>
+                                <option value="19">Sussex County</option>
+                                <option value="20">Union County</option>
+                                <option value="21">Warren County</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" class="form-control" id="inputZip" name="inputZip" required>
+                        </div>
+                    </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Connection" id="Yes" value="1" onclick="ShowHideDiv()" checked>
+                            <label class="form-check-label" for="connect">
+                                I have Internet Connection
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Connection" id="No" value="0" onclick="ShowHideDiv()">
+                            <label class="form-check-label">
+                                I do not have Internet Connection
+                            </label>
+                        </div><br>
+                <!-- </form>
+                <form> -->
+                        <div class="container" id="netyes">
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="inputDsp">Download Speed</label>
+                                    <input type="number" class="form-control" id="dsp" name="dsp" placeholder="mbps" required>
+                                </div>
+                            <!-- </div>
+                            <div class="form-row"> -->
+                                <div class="form-group col-md-4">
+                                    <label for="inputUsp">Upload Speed</label>
+                                    <input type="number" class="form-control" id="usp" name="usp" placeholder="mbps" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="inputservice">Internet Service Provider</label>
+                                    <select id="inputservice" class="form-control" name="inputservice" required>
+                                            <option value="sel" selected>---Select Service Provider---</option>
+                                            <option value="1">Xfinity</option>
+                                            <option value="2">Optimum</option>
+                                            <option value="3">Spectrum</option>
+                                            <option value="4">Century Link</option>
+                                            <option value="5">Verizon</option>
+                                            <option value="6">Starry Internet</option>
+                                            <option value="7">Viasat</option>
+                                            <option value="8">HughesNet</option>
+                                            <option value="9">Ultra Home Internet</option>
+                                            <option value="10">Atlantic Broadband</option>
+                                            <option value="11">Consolidated Communications</option>
+                                            <option value="12">Service Electric Cable TV</option>
+                                            <option value="13">Jersey Shore Wireless</option>
+                                            <option value="14">Xchange Telecom</option>
+                                            <option value="15">Argent Communications</option>
+                                            <option value="16">Warwick Valley Telephone</option>
+                                            <option value="17">Wavecomm</option>
+                                            <option value="18">Upstream</option>
+                                            <option value="19">Cyberpine Cooperative</option>
+                                            <option value="20">Access One</option>
+                                            <option value="21">NetCarrier Telecom</option>
+                                            <option value="22">Goes Telecom</option>
+                                            <option value="23">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputconnecttype">Connection type</label>
+                                    <select id="inputconnecttype" class="form-control" name="inputconnecttype" required="true">
+                                          <option value="select" selected>---Select Connection Type---</option>
+                                          <option value="1">Digital Subscriber Line( DSL )</option>
+                                          <option value="2">Cable Modem</option>
+                                          <option value="3">Fiber</option>
+                                          <option value="4">Wireless</option>
+                                          <option value="5">Satellite</option>
+                                          <option value="6">Broadband over Powerlines( BPL )</option>
+                                          <option value="7">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                          </div>
+                <!-- </form>
+                <form>-->
+                          <div class="container" id="netno" style="display:none">
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="true" id="access" name="access">
+                                  <label class="form-check-label" for="flexCheckDefault">
+                                      I do not have Accessibility
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="true" id="afford" name="afford">
+                                  <label class="form-check-label" for="flexCheckChecked">
+                                      I cannot afford it
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="true" id="necessity" name="necessity">
+                                  <label class="form-check-label" for="flexCheckChecked">
+                                      I do not have necessity
+                                  </label>
+                              </div>
+                              <div class="form-group">
+                                <label for="Other">Other:</label>
+                                <textarea class="form-control" rows="5" maxlength="200" id="other" name="other"></textarea>
+                              </div>
+                          </div>
+            <input type="submit" class="btn btn-primary" style="background-color: #CC0000;" onclick="insertData()"/>
+          </form>
+        </div>
+        <div class="col-4">
+          <div class="row">
+            <div id="sc-container">
+              <div id="sc-branding" class="sc-bb">
+                  <a target="_blank" href="https://www.speedcheck.org/">
+                      <img src="https://cdn.speedcheck.org/branding/speedcheck-logo-18.png" alt="Speedcheck"/>
+                  </a>
+              </div>
+            </div>
+            <script src="https://cdn.speedcheck.org/basic/scbjs.min.js" async></script>
+          </div>
+          <div class="row">
+            <img src="resources/bpu-logo.jpg" alt="BPU logo" width="300" height="300vh">
+          </div>
+        </div>
+    </div>
+    <script type = "text/javascript"  src="scripts/insert.js"></script>
+    
+</body>
+</html>

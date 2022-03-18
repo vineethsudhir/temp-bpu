@@ -8,12 +8,14 @@
         // $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ;
         // $conn = pg_connect($connection_string);
 
-        $con = mysqli_connect('localhost','webinsert','WebUser','bpusurvey');
+        $con = mysqli_connect('ls-87f7666a53e3973d96f5de5085bf3a1b1d4bfb11.crmbx5ihylbr.us-east-1.rds.amazonaws.com', 'webinsert','WebUser','bpusurvey');
         if($con){
             echo "Connected"; 
         }else{
             echo "Error in connecting to database";
         }
+
+        mysqli_select_db($con, 'bpusurvey');
 
 
         $inputAddress = $_POST['inputAddress'];
@@ -32,14 +34,10 @@
         $inputNecessity = $_POST['necessity'];
         $comments =  $_POST['other'];
         
-        $query = "INSERT INTO 'surveyresponse' (streetAddress, aptNumber, housingType, city, county, zip, connection, downloadSpeed, uploadSpeed, internetSP, connectType, affordability, accessibility, necessity, comments) VALUES ('$inputAddress','$inputAddress2','$inputHouseType','$inputCity','$inputCounty','$inputZip','$connection','$inputDownSpeed','$inputUpSpeed','$inputServiceP','$inputConnectType','$inputAfford','$inputAccess','$inputNecessity','$comments') ";
+        $query = "INSERT INTO surveyresponse (streetAddress, aptNumber, housingType, city, county, zip, connection, downloadSpeed, uploadSpeed, internetSP, connectType, affordability, accessibility, necessity, comments) VALUES ('$inputAddress','$inputAddress2','$inputHouseType','$inputCity','$inputCounty','$inputZip','$connection','$inputDownSpeed','$inputUpSpeed','$inputServiceP','$inputConnectType','$inputAfford','$inputAccess','$inputNecessity','$comments') ";
         
-        $result = mysqli_query($con,$query);
+        mysqli_query($con,$query);
 
-        if($result){
-            echo "Database updated!";
-        }
+        echo "Database updated!"; 
 
 ?>
-
-<!-- INSERT INTO `surveyresponse` (`responseID`, `streetAddress`, `aptNumber`, `housingType`, `city`, `county`, `zip`, `connection`, `downloadSpeed`, `uploadSpeed`, `internetSP`, `connectType`, `affordability`, `accessibility`, `necessity`, `comments`) VALUES ('3', '500 3rd st', '1', '1', 'Newark', '10', '07101', '1', '700', '400', '4', '3', '0', '0', '0', ''); -->
